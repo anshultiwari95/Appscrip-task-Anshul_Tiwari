@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from 'react';
-import styles from './FilterSidebar.module.css';
+import styles from './FilterSideBar.module.css';
 
 const FilterSection = ({ title, options }) => {
   const [isOpen, setIsOpen] = useState(true);
