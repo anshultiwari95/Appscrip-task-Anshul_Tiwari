@@ -6,6 +6,7 @@
   background-color: #ffffff;
   width: 100vw;
   box-sizing: border-box;
+  align-items: center;
 }
 
 .header__highlights {
@@ -14,6 +15,7 @@
   background-color: #000000;
   padding: 8px 12px;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 .highlight-card {
@@ -40,13 +42,13 @@
 .header__main {
   display: flex;
   flex-direction: column;
-  padding: 16px 20px;
-  gap: 16px;
+  justify-content: space-around;
   width: 100%;
   box-sizing: border-box;
 }
 
 .header__topRow {
+  position: relative; /* Important for absolute center */
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -58,7 +60,6 @@
 }
 
 .header__logo-container,
-.header__brand-name,
 .header__icons {
   flex: 0 0 auto;
 }
@@ -68,13 +69,20 @@
   height: 40px;
 }
 
+/* ✅ Center the brand name absolutely */
+.header__brand-name {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
 .header__title {
   font-size: 36px;
   font-weight: 800;
   margin: 0;
   color: #111;
   font-family: 'Inter', sans-serif;
-
 }
 
 .header__icons {
@@ -88,19 +96,18 @@
   cursor: pointer;
 }
 
-.header_lang{
+.header_lang {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap:4px;
+  gap: 4px;
 }
 
-.header_language{
+.header_language {
   font-weight: 700;
   font-size: 16px;
   color: #252020;
 }
-
 
 .header__nav {
   width: 100%;
@@ -130,6 +137,7 @@
   color: gray;
 }
 
+/* ✅ Responsive tablet layout */
 @media screen and (max-width: 1024px) {
   .header__main {
     gap: 20px;
@@ -141,6 +149,12 @@
     text-align: center;
   }
 
+  .header__brand-name {
+    position: static;
+    transform: none;
+    margin: 10px 0;
+  }
+
   .header__icons {
     justify-content: center;
   }
@@ -150,6 +164,7 @@
   }
 }
 
+/* ✅ Mobile layout */
 @media screen and (max-width: 768px) {
   .highlight-card {
     flex: 1 1 45%;

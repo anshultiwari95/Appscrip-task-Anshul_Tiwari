@@ -22,40 +22,41 @@ export default function MainSection() {
   return (
     <main>
       <section className={styles.headingSection}>
-  <h2 className={styles.headingSection__title}>DISCOVER OUR PRODUCTS</h2>
-  <span className={styles.headingSection__description}>
-    Lorem ipsum dolor sit amet consectetur. Amet est posuere rhoncus<br/> scelerisque. 
-    Dolor integer scelerisque nibh amet mi ut elementum dolor.
-  </span>
-</section>
+        <h2 className={styles.headingSection__title}>DISCOVER OUR PRODUCTS</h2>
+        <span className={styles.headingSection__description}>
+          Lorem ipsum dolor sit amet consectetur. Amet est posuere rhoncus<br/> scelerisque. 
+          Dolor integer scelerisque nibh amet mi ut elementum dolor.
+          </span>
+          </section>
 
-<section className={styles.mainSection}>
-  <div className={styles.toolbar}>
-    <div className={styles.filter}>
-      <span className={styles.toolbar__itemCount}>{products.length} ITEMS</span>
-      <button className={styles.toolbar__filterToggle} onClick={toggleSidebar}>  
-    
-      {showSidebar ? (
-      <>
-        <img src="hidefilter-icon.svg"  alt="hide" className={styles.icon} />
-        HIDE FILTER
-      </>
-    ) : (
-      <>
-        <img src="showfilter-icon.svg"  alt="show" className={styles.icon} />
-        SHOW FILTER
-      </>
-    )}
-    </button>
-    </div>
+          <section className={styles.mainSection}>
+            <div className={styles.toolbar}>
+              <div className={styles.filter}>
+                <span className={styles.toolbar__itemCount}>{products.length} ITEMS</span>
+                <button className={styles.toolbar__filterToggle} onClick={toggleSidebar}>  
+                  {showSidebar ? (
+                    <>
+                      <img src="hidefilter-icon.svg"  alt="hide" className={styles.icon} />
+                      HIDE FILTER
+                      </>
+                      ) : (
+                        <>
 
-    <select className={styles.toolbar__sortDropdown}>
+                        <img src="showfilter-icon.svg"  alt="show" className={styles.icon} />
+                       SHOW FILTER
+                       </>
+                       )}
+                </button>
+
+               </div>
+
+          <select className={styles.toolbar__sortDropdown}>
       <option value="recommended">RECOMMENDED</option>
       <option value="new">NEWEST FIRST</option>
       <option value="popular">POPULAR</option>
       <option value="high">PRICE: HIGH TO LOW</option>
       <option value="low">PRICE: LOW TO HIGH</option>
-    </select>
+           </select>
   </div>
 
   <div className={styles.contentArea}>
